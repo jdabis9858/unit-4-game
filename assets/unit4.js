@@ -3,12 +3,13 @@
  var crystal2 = "";
  var crystal3 = "";
  var crystal4 = "";
- var score = "";
+ var matchingnum =0;
+ var score = 0;
 
 $(document).ready(function() {
 
-   targetnum = math.floor((math.random() * 75) + 30);
-        $("#trg").html("the target nember is " + targetnum);
+   targetnum = Math.floor((Math.random() * 75) + 30);
+        $("#trg").html("the target number is " + targetnum);
 
     
     
@@ -40,11 +41,9 @@ $(document).ready(function() {
 
 
         $(".imgs").on("click", function() {
-            score = parseInt(crystal1 + crystal2 + crystal3 + crystal4);
+            score = Number(crystal1) + Number(crystal2) + Number(crystal3) + Number(crystal4);
             $("#score").html(score)
             console.log(score)
-
-
 
                 if (score == targetnum) {
                     alert("you win")
